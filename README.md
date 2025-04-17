@@ -26,21 +26,6 @@ This project is a backend application developed in Java using Spring Boot, JPA, 
 - H2 Database (for testing)
 - PostgreSQL (for development and production)
 
-## Getting Started
-
-### Prerequisites
-
-- Java 11 or higher
-- Maven 3.6 or higher
-- PostgreSQL (if not using H2)
-
-### Installation
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/pro-gabrielteixeira/web-Spring-Boot-JPA-Hibernate.git
-   cd web-Spring-Boot-JPA-Hibernate
-
 ## Architecture
 
 Below are visual aids that help understand the structure and design of the project.
@@ -67,4 +52,63 @@ This diagram represents the **logical architecture** of the application. It high
 
 ![Logical Layers](https://github.com/user-attachments/assets/34d10ab6-48c4-40c9-807f-da74f909b28f)
 
+## Getting Started
+
+### Prerequisites
+
+- Java 11 or higher
+- Maven 3.6 or higher
+- PostgreSQL (if not using H2)
+
+# 🚀 Installation & Setup
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/pro-gabrielteixeira/web-Spring-Boot-JPA-Hibernate.git
+cd web-Spring-Boot-JPA-Hibernate
+```
+
+### 2. Configure the Database
+By default, the application runs using an in-memory H2 database.
+
+To use PostgreSQL:
+
+1. Open the file `src/main/resources/application.properties`.
+2. Replace the datasource properties with your PostgreSQL credentials:
+
+```properties
+spring.datasource.url=jdbc:postgresql://localhost:5432/your_database
+spring.datasource.username=your_username
+spring.datasource.password=your_password
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+```
+
+3. Create the database manually:
+
+```sql
+CREATE DATABASE your_database;
+```
+
+### 3. Build the Project
+```bash
+mvn clean install
+```
+
+### 4. Run the Application
+```bash
+mvn spring-boot:run
+```
+
+The application will be available at:
+
+```text
+http://localhost:8080
+```
+
+# 🔍 Exploring the API
+You can test the RESTful endpoints using tools like:
+
+- **Postman**
+- **Insomnia**
+- Your browser (for GET requests)
 
